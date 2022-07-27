@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const apiRouter = require('./routes/routes');
+const Router = require('./routes/routes');
 
 
 const PORT = 3000;
@@ -26,12 +26,15 @@ app.use(express.urlencoded({ extended: true }));
 /**
  * handle requests for static files
  */
-// app.use(express.static(path.resolve(__dirname, '../client')));
+app.use(express.static(path.resolve(__dirname, './client')) );
 
 /**
  * define route handlers
  */
-app.use('/', apiRouter);
+app.use('/', Router);
+
+
+
 
 app.use((req, res) =>
   res.status(404).send("This is not the page you're looking for...")
