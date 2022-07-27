@@ -33,7 +33,7 @@ flashcardController.getAllCardsFromSet = async (req, res, next) => {
 //Get all Sets
 flashcardController.getAllSets = async (req, res, next) => {
   try {
-    console.log(req);
+    // console.log(req);
     const sets = await Set.find({});
   console.log('from get all sets controller',sets);
     res.locals.sets = sets;
@@ -51,6 +51,7 @@ flashcardController.createSet = async (req, res, next) => {
   const { name } = req.body;
 
   const newSet = await Set.create({ name });
+  console.log(newSet);
   res.locals.newSet = newSet;
   return next();
 };

@@ -24,9 +24,24 @@ module.exports = {
         },
       },
       {
-        test: /\.s[ac]ss$/i,
-        exclude: /node_modules/,
+        test: /.(css|scss)$/,
+        
         use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /.(css|scss)$/,
+        include: [/client\/stylesheets\/modules/],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]',
+            },
+          },
+          'sass-loader',
+        ],
       },
     ],
   },
@@ -42,7 +57,10 @@ module.exports = {
       publicPath: '/build',
     },
     proxy: {
-      '/api': 'http://localhost:3000/',
+      '/api/': {
+        target: 'http://localhost:3000/',
+        pathRewrite: { '^/api': '' },
+      },
     },
     open: true,
     hot: true,
