@@ -13,7 +13,9 @@
   border: 5px solid rgb(28, 163, 66);
   box-shadow: 10px -5px 10px 10px rgba(193, 193, 193, 0.265);
   border-radius: 15px;
+  overflow: scroll;
   transition: all 1s;
+
 }
 .setContainer:hover{
    background-color: rgba(239, 239, 239, 0.6);
@@ -79,4 +81,7 @@ Modal{
  .header{
     margin: 2em;
 
+ }
+ #plusButton{
+    margin: 1em;
  }

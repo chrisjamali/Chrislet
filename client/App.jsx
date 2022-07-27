@@ -21,7 +21,7 @@ const App = () => {
       {/* <HomePage /> */}
       <Router>
         <Routes>
-          <Route exact path='/createset' element={<CreateSet />} />
+          <Route exact path='/createset/:setName/:setId' element={<CreateSet />} />
           <Route exact path='/' element={<HomePage />} />
         </Routes>
       </Router>

@@ -6,9 +6,9 @@ const flashcardController = {};
 flashcardController.createFlashcard = async (req, res, next) => {
   try {
     console.log('param from create flashcard controller', req.body);
-    console.log('quieries from create flashcard controller', req.query);
+    console.log('quieries from create flashcard controller', req.params);
     const { question, answer } = req.body;
-    const { set_id } = req.query;
+    const { set_id } = req.params;
 
     const newCard = await Flashcard.create({ question, answer, set_id });
 

@@ -40,7 +40,7 @@ const sendSetName = async (e) =>{
     //   console.log(data);
     // })
      
-   navigate('/createset', { replace: true });
+   navigate(`/createset/${data.name}/${data._id}`, { replace: true });
   }catch(err){
       console.log(err)
     }
