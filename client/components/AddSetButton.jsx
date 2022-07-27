@@ -1,13 +1,14 @@
 import React, { useState, setShow,useEffect } from 'react';
 import { Modal,Button, Form } from 'react-bootstrap';
 import '../stylesheets/styles.css';
+import { Link, useNavigate } from 'react-router-dom';
 
 const AddSetButton = () => {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 const [input,setInput] = useState('')
-
+const navigate = useNavigate();
 const getSetName = (e) =>{
   console.log('set NAME', e.target.value)
 setInput(e.target.value)
@@ -16,6 +17,7 @@ setInput(e.target.value)
 const sendSetName = async (e) =>{
 
   try{
+
     console.log(input)
   e.preventDefault();
   // useEffect(() => {
@@ -29,10 +31,16 @@ const sendSetName = async (e) =>{
   //  getSetName()
   const res = await fetch('/api/newset',req)
   const data = await res.json()
+  // const refresh = await data.then(()=> props.history.push('/'))
+  // data.then(() => {
+  //     props.history.push('/');
+  //   });
     // .then((resp) => resp.json())
     // .then((data) => {
     //   console.log(data);
     // })
+     
+   navigate('/createset', { replace: true });
   }catch(err){
       console.log(err)
     }

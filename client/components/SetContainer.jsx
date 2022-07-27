@@ -2,7 +2,14 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import '../stylesheets/styles.css';
 import SetIcons from './SetIcons.jsx';
+import CreateSet from '../pages/CreateSet';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 const SetContainer = () => {
   const [sets, setSets] = useState([]);
 

@@ -18,8 +18,10 @@ import './stylesheets/styles.css';
   crossorigin='anonymous'
 />;
 
-root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-);
+root.render( <App/> );
+
+//root.render(
+//   <BrowserRouter>
+    // <App />
+  {/* </BrowserRouter> */}
+// );

@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         test: /.(css|scss)$/,
-        
+
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
@@ -64,6 +64,7 @@ module.exports = {
     },
     open: true,
     hot: true,
+    historyApiFallback: true,
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],

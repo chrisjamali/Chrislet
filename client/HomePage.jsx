@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+
+import React, {Component} from 'react';
 import {
   BrowserRouter as Router,
+  Switch,
   Route,
-  Routes,
   Redirect,
 } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
@@ -13,20 +14,26 @@ import MainContainer from './MainContainer.jsx';
 import './stylesheets/styles.css';
 // import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import HomePage from './HomePage.jsx';
 
-const App = () => {
+
+const HomePage = () => {
+
   return (
     <div>
-      {/* <HomePage /> */}
-      <Router>
-        <Routes>
-          <Route exact path='/createset' element={<CreateSet />} />
-          <Route exact path='/' element={<HomePage />} />
-        </Routes>
-      </Router>
+      <div className='header'>
+        <h1> Chrislet </h1>
+      </div>
+          <span className='centered'>
+          <AddSetButton />
+          </span>
+    
+      <span className='centered'>
+        <MainContainer />
+      </span>
     </div>
   );
-};
+}
 
-export default App;
+export default HomePage
+
+

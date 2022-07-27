@@ -1,3 +1,5 @@
+
+
 .setContainer {
    margin: 3em;
   display: grid;
@@ -7,6 +9,7 @@
   align-items: flex-start;
   width: 50em;
   height: 20em;
+  min-height: 60vh;
   border: 5px solid rgb(28, 163, 66);
   box-shadow: 10px -5px 10px 10px rgba(193, 193, 193, 0.265);
   border-radius: 15px;
@@ -44,6 +47,8 @@ Modal{
    display: flex;
    height:30%;
    width: 70%;
+   min-width: 100px;
+   min-height: 80px;
    border: 1px solid black;
    border-radius: 7%;
    justify-content: center;
@@ -70,3 +75,8 @@ Modal{
  /* body{
     background: black;
  } */ 
+
+ .header{
+    margin: 2em;
+
+ }
