@@ -31,9 +31,7 @@ app.use(express.static(path.resolve(__dirname, './client')) );
 /**
  * define route handlers
  */
-app.use('/', apiRouter);
-
-
+app.use('/api', apiRouter);
 
 
 app.use((req, res) =>

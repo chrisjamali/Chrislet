@@ -14,8 +14,8 @@ router.get('/set/:set_id', controller.getSet, (req,res)=> {
 
 // get all stacks 
 router.get('/sets', controller.getAllSets, (req, res) => {
-
-  res.send(res.locals.sets);
+console.log()
+  res.status(200).json(res.locals.sets);
 });
 // create new stack 
 router.post('/newset', controller.createSet, (req, res) => {

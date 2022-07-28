@@ -1,15 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
+import '../stylesheets/styles.css'
 const Flashcard = (props) => {
   const [flip,setFlip] = useState(false)
 
- 
-
   return (
-    
-      <div className = {`card ${flip ? 'flip' : ''}`} onClick={()=>setFlip(!flip)}>
-        {/* {flip ? props.a : props.q } */}
-
+  
+      <div className = {`cardz ${flip ? 'flip':''}`} onClick={()=>setFlip(!flip)}>
+       
         <div className = "front">
           {props.q}
         </div>

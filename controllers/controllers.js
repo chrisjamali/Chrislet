@@ -60,6 +60,7 @@ flashcardController.getAllCardsFromSet = async (req, res, next) => {
 flashcardController.getAllSets = async (req, res, next) => {
   try {
     // console.log(req);
+    console.log(req.originalUrl);
     const sets = await Set.find({});
     console.log('from get all sets controller', sets);
     res.locals.sets = sets;

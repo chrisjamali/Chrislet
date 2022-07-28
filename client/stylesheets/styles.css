@@ -22,7 +22,7 @@
 
 }
 .setContainer:hover{
-   transform:scale(1.05);
+   transform:scale(1.01);
 }
 
 h1 {
@@ -114,8 +114,64 @@ body{
     --bs-btn-disabled-border-color: #d2d2d2;
     --bs-gradient: none;
 }
-.flashcard{
+/* .flashcard{
    height: 10em;
    width: 20em;
    border: 1px solid white;
+} */
+
+.cardz{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   border-radius: .25rem;
+   box-shadow: 0 0 5px 2px rgba(0,0,0,.3);
+   transform-style: preserve-3d;
+   height: 200px;
+   width: 350px;
+   transition: 200ms;
+background-color: #3D3D91;
+   cursor: pointer;
+   transform: perspective(1000px) rotateY(var(--rotate-y,0))
+   translateY(var(--translate-y,0));
+   margin-bottom: 1rem;
+   letter-spacing: 2px;
+   word-spacing: 4px;
+}
+.cardz.flip{
+   --rotate-y: 180deg;
+}
+
+.cardz .front,
+.cardz .back {
+   position: absolute;
+   padding: 1rem;
+   backface-visibility:hidden ;
+
+}
+
+.cardz .back{
+
+   transform: rotateY(180deg);
+      align-items: center;
+}
+
+.cardz:hover{
+--translate-y: -2px;
+box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.566);
+background-color: #3d3d918a;
+}
+
+.cardz .front{
+   display:flex;
+   left:0;
+   align-items: flex-start !important;
+}
+
+.gridContainer{
+display: grid;
+grid-template-columns: repeat(1, 1fr);
+gap: 1em;
+ 
 }
