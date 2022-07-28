@@ -12,38 +12,30 @@ import {
 } from 'react-router-dom';
 const SetContainer = () => {
   const [sets, setSets] = useState([]);
-  const [ids, setIDs] = useState([])
-  // GET request using fetch inside useEffect React hook
-  // const getSets = async () => {
-    
-  // };
+  // const [ids, setIDs] = useState([])
+  // // GET request using fetch inside useEffect React hook
+  // // const getSets = async () => {
+
+  // // };
 
   useEffect(() => {
- axios('/api/sets').then(res=> res.json()).then((data) => {
-      // console.log("FROM THEN HANDLER",data.data._id)
-        // console.log('RESPOSNE',data.name)
-       console.log(data)
-        // setIDs(data.data._id)
-        // console.log('ID why arent u loading',data.map(x=> x.name))
-        return setSets(data)
-        //  console.log('this is my STATE', state)
+    fetch('/api/sets')
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("from then handler",data);
+        return setSets(data);
       });
   }, []);
   // empty dependency array means this effect will only run once (like componentDidMount in classes)
-  // console.log('SETS',sets)
+
   // key = {set._id}
-const allSets= sets.map((s,i) =>{return  < SetIcons nam = {s.name}  key ={`setz${i}`} /> });
+  const allSets = sets.map((set) => {
+    return <SetIcons nam={set.name} key = {set._id} />;
+  });
 
   return (
     <div>
-      
-      <div className= "setContainer" >
-  
-
-           {allSets}
-
-         </div>
-
+      <div className='setContainer'>{allSets}</div>
     </div>
   );
 };

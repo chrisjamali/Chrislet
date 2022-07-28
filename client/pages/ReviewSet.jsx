@@ -31,7 +31,7 @@ const ReviewSet = (props) => {
             //  console.log('this is my STATE', state)
           });
       }, []);
-     console.log(cards)
+     console.log('cards state',cards)
 // const ques = cards.map(x=>x.question);
 // const ans = cards.map((x) => x.answer);
 const allCards = cards.map(x => <Flashcard q ={x.question} a = {x.answer} key = {x._id} setId = {setId}/>);

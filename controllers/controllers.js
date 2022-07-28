@@ -94,4 +94,17 @@ res.locals.set = seet
   return next();
 };
 
+flashcardController.getSetFromName = async (req,res,next) => {
+  // console.log('from NEWEST CONTROLLER', req.params)
+//   const {name} = req.params
+//   const set = await Set.find({name})._id
+//   console.log('SET FROM NEWEST CONTROLLER', )
+//   const result = set
+//   const _id = set
+// const cards = await Flashcard.find({_id})
+// console.log('CARDSSSSSSSS',cards)
+//   res.locals.setId = set
+return next()
+}
+
 module.exports = flashcardController;

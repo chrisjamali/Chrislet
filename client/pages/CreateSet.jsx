@@ -38,7 +38,7 @@ const navigate = useNavigate();
   return (
     <div>
       <div className='centered' style ={{margin: '1.5em'}}>
-        <h1> {setName} </h1>
+        <h1> {setName} Deck </h1>
       </div>
       <Container style={{ display: 'grid', gap: '1em' }}>{inputs}</Container>
       <div className='centered' style={{ margin: '1em' }}>

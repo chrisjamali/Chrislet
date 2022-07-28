@@ -22,6 +22,13 @@ router.post('/newset', controller.createSet, (req, res) => {
  'res.locals from set router POST =', res.locals;
   res.status(200).json(res.locals.newSet);
 });
+
+// get all flashcards by set name
+router.get('/fromname/:name', controller.getSetFromName, (req,res)=> {
+  console.log('fromNAME router ', res.locals)
+  res.status(200).json(res.locals.setId)
+})
+
 // update stack preexisitng 
 
 // delete a whole stack

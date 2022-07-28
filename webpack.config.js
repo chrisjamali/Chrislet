@@ -57,7 +57,14 @@ module.exports = {
       publicPath: '/build',
     },
     proxy: {
-      '/api/':'http://localhost:3000/',
+      '/api/**': {
+        target: 'http://localhost:3000/',
+        secure: false,
+      },
+      '/assets/**': {
+        target: 'http://localhost:3000/',
+        secure: false,
+      },
     },
     open: true,
     hot: true,
