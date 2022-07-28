@@ -14,6 +14,7 @@ import './stylesheets/styles.css';
 // import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from './HomePage.jsx';
+import ReviewSet from './pages/ReviewSet.jsx'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Routes>
           <Route exact path='/createset/:setName/:setId' element={<CreateSet />} />
           <Route exact path='/' element={<HomePage />} />
+          <Route exact path ='/reviewset/:setId' element = {<ReviewSet/>} />
         </Routes>
       </Router>
     </div>

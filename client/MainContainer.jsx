@@ -8,11 +8,12 @@ const MainContainer = () => {
   return (
     <div>
       <Container fluid>
-        <Row>
-          <Col>
-          <SetContainer/>
+        {/* <Row>
+          // <Col>
+          // <SetContainer/>
           </Col>
-        </Row>
+        </Row> */}
+        <SetContainer />
       </Container>
     </div>
   );

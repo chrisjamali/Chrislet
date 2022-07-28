@@ -6,6 +6,11 @@ const mongoose = require('mongoose');
 const controller = require('../controllers/controllers.js')
 const router = express.Router();
 
+//get one stack
+router.get('/set/:set_id', controller.getSet, (req,res)=> {
+  res.status(200).json(res.locals.set)
+})
+
 
 // get all stacks 
 router.get('/sets', controller.getAllSets, (req, res) => {
@@ -22,7 +27,7 @@ router.post('/newset', controller.createSet, (req, res) => {
 // delete a whole stack
 
 // get cards from individual stack ?
-router.get('/getAllFlashcards', controller.getAllCardsFromSet, (req,res)=> {
+router.get('/getAllFlashcards/:set_id', controller.getAllCardsFromSet, (req,res)=> {
   res.status(200).json(res.locals.flashcards);
 })
 // create a new card

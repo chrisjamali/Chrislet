@@ -1,5 +1,8 @@
 
-
+ body{
+    min-height: 100%;
+    background-color: navy;
+ }
 .setContainer {
    margin: 3em;
   display: grid;
@@ -10,15 +13,16 @@
   width: 50em;
   height: 20em;
   min-height: 60vh;
-  border: 5px solid rgb(28, 163, 66);
-  box-shadow: 10px -5px 10px 10px rgba(193, 193, 193, 0.265);
+  border: 5px solid rgb(175, 155, 69);
+  box-shadow: 10px -10px 20px 20px rgba(179, 178, 214, 0.08);
   border-radius: 15px;
   overflow: scroll;
+  background-color:#232351 ;
   transition: all 1s;
 
 }
 .setContainer:hover{
-   background-color: rgba(239, 239, 239, 0.6);
+   transform:scale(1.05);
 }
 
 h1 {
@@ -27,13 +31,12 @@ h1 {
   align-self: center;
   align-items: center;
   justify-content: center;
-color: rgb(28, 163, 66);
+color: rgb(211, 199, 151);
   transition: all 1.5s
 }
 h1:hover{
    letter-spacing: 1em;
-   color:rgb(13, 87, 34);;
-   text-shadow: 10px 5px  rgba(8, 27, 7, 0.574);;
+   text-shadow: 10px 5px  rgba(244, 248, 255, 0.419);;
 }
 .centered {
   display: flex;
@@ -57,9 +60,10 @@ Modal{
    align-items: center;
    align-self: center;
    margin: 1rem;
-   box-shadow: 3px 3px 6px rgba(9, 54, 47, 0.396);
+   box-shadow: 3px 3px 6px rgba(198, 198, 198, 0.396);
    font-size: small;
    letter-spacing: 3px;
+   background-color: #3D3D91;
    transition: all 1s
 }
  .stack:hover{
@@ -70,7 +74,7 @@ Modal{
  .stack:active{
     background-color: rgba(185, 185, 185, 0.312);
     color: rgba(0, 0, 0, 0.487);
-    box-shadow: 3px 3px 6px rgba(31, 70, 64, 0.396);
+    box-shadow: 3px 3px 6px rgba(167, 167, 167, 0.396);
     transform: scale(.98);
    
   }
@@ -85,3 +89,33 @@ Modal{
  #plusButton{
     margin: 1em;
  }
+#floatingInputGrid{
+overflow-x: none !important;
+overflow-y: scroll !important;
+}
+body{
+   background-color: rgb(22, 22, 69) !important;
+   color: rgb(217, 215, 202) !important;
+}
+
+.btn-outline-success {
+    --bs-btn-color: #e3debc!important;
+    --bs-btn-border-color: #e3debc!important;
+    --bs-btn-hover-color: rgb(22, 22, 69)!important;
+    --bs-btn-hover-bg: #e3debc78 !important;
+    --bs-btn-hover-border-color: #e3debc !important;
+    --bs-btn-focus-shadow-rgb: 217, 215, 202 !important;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg:  #e3debc7c!important;
+    --bs-btn-active-border-color: #e3debc7c!important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #ffffff;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #d2d2d2;
+    --bs-gradient: none;
+}
+.flashcard{
+   height: 10em;
+   width: 20em;
+   border: 1px solid white;
+}
