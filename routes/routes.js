@@ -38,7 +38,7 @@ router.get('/getAllFlashcards/:set_id', controller.getAllCardsFromSet, (req,res)
   res.status(200).json(res.locals.flashcards);
 })
 // create a new card
-router.post('/newflashcard/:set_id',controller.createFlashcard, (req,res)=>{
+router.post('/newflashcard/:set_id/:set_name',controller.createFlashcard, (req,res)=>{
     console.log('res.locals from flash card router POST =',res.locals);
 res.status(200).json(res.locals.newCard)
 } )

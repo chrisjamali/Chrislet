@@ -39,7 +39,8 @@ const flashcardSchema = new mongoose.Schema({
   answer: String,
   set_id :{ 
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'set'}
+    ref: 'set'},
+    set_name : String,
 });
 
 const Flashcard = mongoose.model('flashcard', flashcardSchema);

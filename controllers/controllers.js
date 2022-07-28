@@ -10,11 +10,13 @@ flashcardController.createFlashcard = async (req, res, next) => {
       'quieries from create flashcard controller',
       req.params.set_id.slice(1)
     );
+    console.log('I AM THE NAME OF SET', req.params.set_name)
     const { question, answer } = req.body;
     const stringID = req.params.set_id.slice(1);
     var objectId = mongoose.Types.ObjectId(stringID.trim());
     const set_id = objectId;
-    const newCard = await Flashcard.create({ question, answer, set_id });
+    const { set_name } = req.params;
+    const newCard = await Flashcard.create({ question, answer, set_id, set_name });
 
     res.locals.newCard = newCard;
     return next();
@@ -25,14 +27,15 @@ flashcardController.createFlashcard = async (req, res, next) => {
 
 //get all flashcards from set
 flashcardController.getAllCardsFromSet = async (req, res, next) => {
-  console.log('from the all cards from set', req.params.set_id);
+  
   try {
-    const stringID = req.params.set_id;
-    var objectId = mongoose.Types.ObjectId(stringID.trim());
-    const set_id = objectId;
+    console.log('from the all cards from set', req.params.set_id);
+    // const stringID = req.params.set_id;
+    // var objectId = mongoose.Types.ObjectId(stringID.trim());
+    // const set_id = objectId;
   /* Finding all the flashcards that have the same set_id as the set_id that was passed in. */
-    const allCards = await Flashcard.find({ set_id });
-    const setName = await Set.findOne({_id: set_id})
+    const allCards = await Flashcard.find({ set_name: req.params.set_id });
+    // const setName = await Set.findOne({_id: set_id})
   //   const name = setName.name
   //  const parsed = JSON.parse(allCards)
   //  parsed.forEach( x => x.setName = name)
@@ -96,7 +99,7 @@ res.locals.set = seet
 
 flashcardController.getSetFromName = async (req,res,next) => {
   // console.log('from NEWEST CONTROLLER', req.params)
-//   const {name} = req.params
+  const {name} = req.params
 //   const set = await Set.find({name})._id
 //   console.log('SET FROM NEWEST CONTROLLER', )
 //   const result = set
@@ -104,6 +107,12 @@ flashcardController.getSetFromName = async (req,res,next) => {
 // const cards = await Flashcard.find({_id})
 // console.log('CARDSSSSSSSS',cards)
 //   res.locals.setId = set
+
+
+const cards = Flashcard.find({set_name: name})
+
+
+
 return next()
 }
 

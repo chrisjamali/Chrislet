@@ -8,7 +8,7 @@ import FlashcardInput from '../components/FlashcardInput';
 import Button from 'react-bootstrap/Button';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../stylesheets/styles.css';
-
+import Navbar from 'react-bootstrap/Navbar';
 
 const CreateSet = () => {
 
@@ -33,11 +33,19 @@ const navigate = useNavigate();
 // }
 
   while (inputs.length !== count) {
-    inputs.push(<FlashcardInput set_id= {setId} style={{overflowY: 'scroll', overflowX : 'none',overflowWrap: ''}} submit ={submit} key = {inputs.length} />);
+    inputs.push(<FlashcardInput set_id= {setId} style={{overflowY: 'scroll', overflowX : 'none',overflowWrap: ''}} submit ={submit} key = {inputs.length} set_name = {setName} />);
   }
   return (
     <div>
-      <div className='centered' style ={{margin: '1.5em'}}>
+      <Navbar bg='dark' variant='dark'>
+        <Container>
+          <Navbar.Brand style = {{cursor : 'pointer', wordSpacing: '.5rem', letterSpacing: '.5rem'}} onClick={() => navigate('/')}>
+            Home
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+
+      <div className='centered' style={{ margin: '1.5em' }}>
         <h1> {setName} Deck </h1>
       </div>
       <Container style={{ display: 'grid', gap: '1em' }}>{inputs}</Container>
@@ -45,7 +53,7 @@ const navigate = useNavigate();
         <Button
           variant='success'
           onClick={() => setCount(count + 1)}
-          style={{ padding: '.5em 2em', textSize:'29px !important' }}
+          style={{ padding: '.5em 2em', textSize: '29px !important' }}
         >
           +
         </Button>
@@ -58,7 +66,7 @@ const navigate = useNavigate();
             return setSubmit(true);
             //  navigate(`/reviewset/${setId}`);
           }}
-          style = {{padding: '2em 3em', margin:'1em'}}
+          style={{ padding: '2em 3em', margin: '1em' }}
         >
           {' '}
           Submit{' '}

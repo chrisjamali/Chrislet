@@ -175,3 +175,17 @@ grid-template-columns: repeat(1, 1fr);
 gap: 1em;
  
 }
+.show{
+   color: rgba(255, 255, 255, 0.662);
+  
+}
+.modal-content{
+   background-color: #3D3D91 !important;
+   display: flex;
+   align-items: center !important;
+   letter-spacing: 3px;
+  padding-bottom: 1em;
+}
+.modal-content input{
+   width: 80%;
+}

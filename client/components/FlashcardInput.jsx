@@ -29,10 +29,10 @@ const FlashcardInput = (props) => {
         }),
       };
 
-      const res = await fetch(`/api/newflashcard/:${props.set_id}`, req);
+      const res = await fetch(`/api/newflashcard/:${props.set_id}/${props.set_name}`, req);
       const data = await res.json();
 
-      navigate(`/reviewset/${props.set_id}`);
+      navigate(`/reviewset/${props.set_name}`);
     } catch (err) {
       console.log(err);
     }

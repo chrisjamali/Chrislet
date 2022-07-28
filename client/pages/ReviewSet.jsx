@@ -10,15 +10,15 @@ const ReviewSet = (props) => {
    const {setId} = useParams()
    const navigate = useNavigate();
 
-     useEffect(() => {
-       fetch(`/api/set/${setId}`).then(res=> res.json()).then((data) => {
-         console.log('FROM THEN REVIEW HANDLER', data);
-         // console.log('RESPOSNE',data.name)
+    //  useEffect(() => {
+    //    fetch(`/api/set/${setId}`).then(res=> res.json()).then((data) => {
+    //      console.log('FROM THEN REVIEW HANDLER', data);
+    //      // console.log('RESPOSNE',data.name)
        
-         return getName(data.name);
-         //  console.log('this is my STATE', state)
-       });
-     }, []);
+    //      return getName(data.name);
+    //      //  console.log('this is my STATE', state)
+    //    });
+    //  }, []);
   
       useEffect(() => {
         fetch(`/api/getAllFlashcards/${setId}`)
@@ -40,13 +40,13 @@ console.log(allCards)
     <div>
       <Navbar bg='dark' variant='dark'>
         <Container>
-          <Navbar.Brand  onClick={() => navigate('/')}>
-            C h r i s l e t{' '}
+          <Navbar.Brand style = {{cursor : 'pointer', wordSpacing: '.5rem', letterSpacing: '.5rem'}} onClick={() => navigate('/')}>
+            Home
           </Navbar.Brand>
-        
         </Container>
       </Navbar>
-      <h1 style={{ margin: '1em' }}>{name} Deck </h1>
+      
+      <h1 style={{ margin: '1em' }}>{setId} Deck </h1>
       <div className='centered'>
         <div className='gridContainer'>{allCards}</div>
       </div>
