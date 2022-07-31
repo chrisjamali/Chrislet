@@ -12,9 +12,9 @@ router.get('/set/:set_id', controller.getSet, (req,res)=> {
 })
 
 
+
 // get all stacks 
 router.get('/sets', controller.getAllSets, (req, res) => {
-console.log()
   res.status(200).json(res.locals.sets);
 });
 // create new stack 
@@ -23,16 +23,15 @@ router.post('/newset', controller.createSet, (req, res) => {
   res.status(200).json(res.locals.newSet);
 });
 
-// get all flashcards by set name
-router.get('/fromname/:name', controller.getSetFromName, (req,res)=> {
-  console.log('fromNAME router ', res.locals)
-  res.status(200).json(res.locals.setId)
-})
+
+
 
 // update stack preexisitng 
 
 // delete a whole stack
-
+router.delete('/deleteStack/:stack_name', controller.deleteStack, (req,res)=> {
+  res.send()
+})
 // get cards from individual stack ?
 router.get('/getAllFlashcards/:set_id', controller.getAllCardsFromSet, (req,res)=> {
   res.status(200).json(res.locals.flashcards);
@@ -46,6 +45,16 @@ res.status(200).json(res.locals.newCard)
 
 // delete a preexisiting card
 
+
+//add foto
+router.post(
+  '/addphoto',
+  controller.addPhoto,
+  (req, res) => {
+    console.log('res.locals from flash card router POST =', res.locals);
+    res.status(200).json(res.locals.newFoto);
+  }
+);
 
 module.exports = router;
 

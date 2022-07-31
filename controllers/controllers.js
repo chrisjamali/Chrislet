@@ -63,9 +63,11 @@ flashcardController.getAllCardsFromSet = async (req, res, next) => {
 flashcardController.getAllSets = async (req, res, next) => {
   try {
     // console.log(req);
-    console.log(req.originalUrl);
+    // console.log(req.originalUrl);
+
     const sets = await Set.find({});
-    console.log('from get all sets controller', sets);
+    console.log(sets)
+    // console.log('from get all sets controller', sets);
     res.locals.sets = sets;
 
     return next();
@@ -97,23 +99,22 @@ res.locals.set = seet
   return next();
 };
 
-flashcardController.getSetFromName = async (req,res,next) => {
-  // console.log('from NEWEST CONTROLLER', req.params)
-  const {name} = req.params
-//   const set = await Set.find({name})._id
-//   console.log('SET FROM NEWEST CONTROLLER', )
-//   const result = set
-//   const _id = set
-// const cards = await Flashcard.find({_id})
-// console.log('CARDSSSSSSSS',cards)
-//   res.locals.setId = set
+flashcardController.deleteStack = async (req,res,next) => {
 
-
-const cards = Flashcard.find({set_name: name})
-
-
-
+ const {stack_name} = req.params
+const deltet =  await Set.deleteOne({name:stack_name})
+const cardDelete = await Flashcard.deleteMany({set_name: stack_name})
+res.locals.deleted = deltet;
 return next()
+}
+
+flashcardController.addPhoto = async (req,res,next) => {
+try{
+console.log(req)
+
+}
+catch(err)
+{console.log(err);}
 }
 
 module.exports = flashcardController;

@@ -4,7 +4,7 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import { useParams, useNavigate } from 'react-router-dom';
-
+import UploadButton from './uploadButton.jsx';
 const FlashcardInput = (props) => {
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
@@ -50,6 +50,7 @@ const FlashcardInput = (props) => {
               placeholder='Question'
               onChange={(e) => setQuestion(e.target.value)}
             />
+           <UploadButton/>
           </FloatingLabel>
         </Col>
 

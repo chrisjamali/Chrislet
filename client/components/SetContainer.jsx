@@ -22,7 +22,7 @@ const SetContainer = () => {
     fetch('/api/sets')
       .then((res) => res.json())
       .then((data) => {
-        console.log("from then handler",data);
+      console.log(data)
         return setSets(data);
       });
   }, []);
