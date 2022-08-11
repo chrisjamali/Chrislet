@@ -2,7 +2,7 @@ import { UploadOutlined } from '@ant-design/icons';
 import { Button, Upload } from 'antd';
 import React from 'react';
 const props = {
-  action: '/addphoto',
+  action: '/api/addphoto',
   listType: 'picture',
 
   previewFile(file) {

@@ -50,7 +50,7 @@ const FlashcardInput = (props) => {
               placeholder='Question'
               onChange={(e) => setQuestion(e.target.value)}
             />
-           <UploadButton/>
+           {/* <UploadButton/> */}
           </FloatingLabel>
         </Col>
 

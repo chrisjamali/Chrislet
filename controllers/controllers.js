@@ -110,7 +110,8 @@ return next()
 
 flashcardController.addPhoto = async (req,res,next) => {
 try{
-console.log(req)
+const req = await req.body
+console.log(req);
 
 }
 catch(err)

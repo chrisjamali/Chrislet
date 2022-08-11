@@ -53,7 +53,7 @@ const navigate = useNavigate();
         <Button
           variant='success'
           onClick={() => setCount(count + 1)}
-          style={{ padding: '.5em 2em', textSize: '29px !important' }}
+          style={{ padding:'.5em 2em', textSize:'29px !important' }}
         >
           +
         </Button>
@@ -62,11 +62,11 @@ const navigate = useNavigate();
         <Button
           variant='primary'
           onClick={() => {
-            console.log('submit me', submit);
+            console.log('submit me',submit);
             return setSubmit(true);
             //  navigate(`/reviewset/${setId}`);
           }}
-          style={{ padding: '2em 3em', margin: '1em' }}
+          style={{ padding:'2em 3em', margin:'1em' }}
         >
           {' '}
           Submit{' '}
