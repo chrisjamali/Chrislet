@@ -6,6 +6,7 @@ body {
   margin: 3em;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr ;
   /* justify-content: center; */
   /* align-self: center;*/
   align-items: flex-start;

@@ -30,7 +30,9 @@ const FlashcardInput = (props) => {
       };
 
       const res = await fetch(`/api/newflashcard/:${props.set_id}/${props.set_name}`, req);
+      console.log(" RESPONSE FROM FETCH",res)
       const data = await res.json();
+      console.log("DATA FROM FETCH", data)
 
       navigate(`/reviewset/${props.set_name}`);
     } catch (err) {

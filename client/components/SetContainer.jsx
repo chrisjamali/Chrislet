@@ -11,20 +11,27 @@ import {
   Redirect,
 } from 'react-router-dom';
 const SetContainer = () => {
-  const [sets, setSets] = useState([]);
+  const [sets , setSets] = useState([]);
+  //sets = []
   // const [ids, setIDs] = useState([])
   // // GET request using fetch inside useEffect React hook
   // // const getSets = async () => {
 
   // // };
 
+  //similar to componentDidMount 
   useEffect(() => {
+    
+
     fetch('/api/sets')
       .then((res) => res.json())
       .then((data) => {
       console.log(data)
         return setSets(data);
       });
+
+      
+
   }, []);
   // empty dependency array means this effect will only run once (like componentDidMount in classes)
 
